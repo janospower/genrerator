@@ -10,7 +10,8 @@ var types = [];
 var resultDiv,
     button,
     descriptionDiv,
-    code;
+    code,
+    twitterlink;
 
 function doData(json) {
     data = json.feed.entry;
@@ -83,6 +84,9 @@ function placeRandom(){
   // 'http://twitter.com/home?status='
   var tweet = t + message.replace(/ /g, "%20").replace("&", "and");
 
+  // Link:
+  twitterlink.href=tweet;
+
   // QR code:
   while (code.firstChild) {
     code.removeChild(code.firstChild);
@@ -107,6 +111,7 @@ $(document).ready(function(){
     countrycode = document.getElementById("countrycode");
     type = document.getElementById("type");
     code = document.getElementById("qrcode");
+    twitterlink = document.getElementById("twitterlink");
     readData();
     placeRandom();
 });
