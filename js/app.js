@@ -32,7 +32,7 @@ function readData() {
     }
 }
 function randomFromArray (a) {
-  return Math.floor(Math.random() * a.length-1)+1;
+  return Math.floor(Math.random() * (a.length-1))+1;
 }
 function placeRandom(){
   var adj1num = randomFromArray(adjectives);
