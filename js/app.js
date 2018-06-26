@@ -4,7 +4,12 @@ var data = null;
 var adjectives = [];
 var genres = [];
 var ends = [];
-var p;
+var buttons = [];
+var countries = [];
+var types = [];
+var resultDiv,
+    button,
+    descriptionDiv;
 function doData(json) {
     data = json.feed.entry;
 }
@@ -28,6 +33,15 @@ function readData() {
           case 3:
             ends.push(val);
             break;
+          case 4:
+            buttons.push(val);
+            break;
+          case 5:
+            countries.push(val);
+            break;
+          case 6:
+            types.push(val);
+            break;
         }
     }
 }
@@ -45,10 +59,13 @@ function placeRandom(){
   var genre = genres[randomFromArray(genres)];
   var end = ends[randomFromArray(ends)];
   var result = adj1 + " & " + adj2 + " " + genre + " " + end;
-  p.innerHTML = result;
+  resultDiv.innerHTML = result;
+  var buttonText = buttons[randomFromArray(buttons)];
+  button.innerHTML = buttonText;
 }
 $(document).ready(function(){
-    p = document.getElementById("result");
+    resultDiv = document.getElementById("result");
+    button = document.getElementById("button");
     readData();
     placeRandom();
 });
