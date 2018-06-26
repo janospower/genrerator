@@ -62,6 +62,12 @@ p {
     color: white;
     background: rgba(0,0,0,0.99);
 }
+#toprow span {
+  margin-left: 80px;
+}
+#countrycode {
+  text-transform: uppercase;
+}
 #notes {
   margin-top: 80px;
 }

@@ -60,12 +60,20 @@ function placeRandom(){
   var end = ends[randomFromArray(ends)];
   var result = adj1 + " & " + adj2 + " " + genre + " " + end;
   resultDiv.innerHTML = result;
-  var buttonText = buttons[randomFromArray(buttons)];
-  button.innerHTML = buttonText;
+  button.innerHTML = buttons[randomFromArray(buttons)];
+  var three = Math.floor(Math.random() * 500);
+  if (three < 100) {three = '0' + three;}
+  else if (three < 10) {three = '00' + three}
+  threedigits.innerHTML = three;
+  countrycode.innerHTML = countries[randomFromArray(countries)];
+  type.innerHTML = types[randomFromArray(types)];
 }
 $(document).ready(function(){
     resultDiv = document.getElementById("result");
     button = document.getElementById("button");
+    threedigits = document.getElementById("threedigits");
+    countrycode = document.getElementById("countrycode");
+    type = document.getElementById("type");
     readData();
-    placeRandom();
+    // placeRandom();
 });
