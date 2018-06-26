@@ -9,7 +9,8 @@ var countries = [];
 var types = [];
 var resultDiv,
     button,
-    descriptionDiv;
+    descriptionDiv,
+    code;
 
 function doData(json) {
     data = json.feed.entry;
@@ -76,7 +77,10 @@ function placeRandom(){
   type.innerHTML = types[randomFromArray(types)];
 
   // QR code:
-  new QRCode(document.getElementById("qrcode"), {
+  while (code.firstChild) {
+    code.removeChild(code.firstChild);
+  }
+  new QRCode(code, {
   	text: "http://jindo.dev.naver.com/collie",
   	width: 160,
   	height: 160,
@@ -89,6 +93,7 @@ $(document).ready(function(){
     threedigits = document.getElementById("threedigits");
     countrycode = document.getElementById("countrycode");
     type = document.getElementById("type");
+    code = document.getElementById("qrcode");
     readData();
     placeRandom();
 });
