@@ -93,7 +93,11 @@ function placeRandom(){
   	height: 160,
     correctLevel : QRCode.CorrectLevel.L
   });
-  console.log(tweet);
+}
+
+function toggler() {
+    var element = document.getElementById("highlightMenu");
+    element.classList.toggle("highlightMenuActive");
 }
 
 $(document).ready(function(){
