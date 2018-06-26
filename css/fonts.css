@@ -1,0 +1,5 @@
+@font-face {
+    font-family: 'Apax';
+    src: local('Apax Light'), local('Apax-Light'), url('../fonts/Apax-Light.ttf');
+    font-weight: 300
+}
