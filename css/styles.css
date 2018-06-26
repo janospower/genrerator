@@ -49,6 +49,8 @@ section {
   background-color: white;
   height: 100%;
   padding: 80px;
+  display: grid;
+  grid-template-columns: auto 160px;
 }
 p {
   margin-top: 0px;
@@ -89,4 +91,8 @@ p {
 }
 #result:first-letter{
   /* text-transform: capitalize; */
+}
+#qrcode {
+  width:160px;
+  height:160px;
 }

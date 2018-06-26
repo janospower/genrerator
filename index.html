@@ -5,7 +5,7 @@
     <title>Record Review Randomizer</title>
     <meta name="description" content="Hardwax style record genre descriptions by Janos Pauer and Robert Harris">
 
-    <meta name = "viewport" content = "width = device-width">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
     <meta name="apple-mobile-web-app-capable" content="yes">
   	<!-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> -->
 
@@ -18,7 +18,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="js/app.js" type="text/javascript"></script>
     <script src="https://spreadsheets.google.com/feeds/cells/1Vl7dY_3UZm4Wm97t83xLg0AoGVmKzMpb6vW35U-k2Mg/1/public/values?alt=json-in-script&callback=doData"></script>
-
+    <script src="js/qrcode.min.js" type="text/javascript"></script>
 
     <!-- fonts -->
 
@@ -34,24 +34,27 @@
         <button type="button" id="button" name="button" onclick="placeRandom();">Randomize!</button>
       </header>
       <section>
-        <p id="toprow">
-          <span>
-            Label
-          </span>
-          <span id="threedigits">
-            000
-          </span>
-          <span id="countrycode">
-            UK
-          </span>
-          <span id="type">
-            12"
-          </span>
-        </p>
-        <p id="notes">Notes:</p>
-        <p>
-          <span id="result">Result goes here</span>
-        </p>
+        <div>
+          <p id="toprow">
+            <span>
+              Label
+            </span>
+            <span id="threedigits">
+              000
+            </span>
+            <span id="countrycode">
+              UK
+            </span>
+            <span id="type">
+              12"
+            </span>
+          </p>
+          <p id="notes">Notes:</p>
+          <p>
+            <span id="result">Result goes here</span>
+          </p>
+        </div>
+        <div id="qrcode"></div>
       </section>
     </main>
   </body>

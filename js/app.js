@@ -10,6 +10,7 @@ var types = [];
 var resultDiv,
     button,
     descriptionDiv;
+
 function doData(json) {
     data = json.feed.entry;
 }
@@ -45,10 +46,13 @@ function readData() {
         }
     }
 }
+
 function randomFromArray (a) {
   return Math.floor(Math.random() * (a.length-1))+1;
 }
+
 function placeRandom(){
+  // Result phrase:
   var adj1num = randomFromArray(adjectives);
   var adj2num = randomFromArray(adjectives);
   do {
@@ -61,6 +65,8 @@ function placeRandom(){
   var end = ends[randomFromArray(ends)];
   var result = adj1 + " & " + adj2 + " " + genre + " " + end;
   resultDiv.innerHTML = result;
+
+  // Other random elements:
   button.innerHTML = buttons[randomFromArray(buttons)];
   var three = Math.floor(Math.random() * 500);
   if (three < 100) {three = '0' + three;}
@@ -68,7 +74,15 @@ function placeRandom(){
   threedigits.innerHTML = three;
   countrycode.innerHTML = countries[randomFromArray(countries)];
   type.innerHTML = types[randomFromArray(types)];
+
+  // QR code:
+  new QRCode(document.getElementById("qrcode"), {
+  	text: "http://jindo.dev.naver.com/collie",
+  	width: 160,
+  	height: 160,
+  });
 }
+
 $(document).ready(function(){
     resultDiv = document.getElementById("result");
     button = document.getElementById("button");
@@ -76,5 +90,5 @@ $(document).ready(function(){
     countrycode = document.getElementById("countrycode");
     type = document.getElementById("type");
     readData();
-    // placeRandom();
+    placeRandom();
 });
