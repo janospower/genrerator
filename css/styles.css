@@ -1,8 +1,48 @@
 body {
   background-color: rgb(241,240,236);
+  overflow: hidden;
 }
 main {
+  margin: 0px auto;
+  width: 80vw;
+  height: 100vh;
+}
+header {
+  padding: 80px;
+}
+button {
+  border:none;
+  border-bottom: 0.25vw solid black;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 2.5vw;
+  font-style: 'Heavy';
+  line-height: normal;
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
+}
+button:hover {
+  transform: translateY(5px);
+}
+
+button:active {
+  transform: translateY(10px);
+}
+/* Remove excess padding and border in Firefox 4+ */
+&::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+section {
   background-color: white;
+  height: 100%;
+  padding: 80px;
 }
 ::-moz-selection { /* Code for Firefox */
     color: white;
@@ -21,7 +61,6 @@ main {
   -moz-user-select: all;     /* Firefox 43+ */
   -ms-user-select: all;      /* No support yet */
   user-select: all;          /* Likely future */
-  border-bottom: 0.25vw solid black;
   /* text-transform: lowercase; */
 }
 #result:first-letter{
