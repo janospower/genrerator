@@ -4,8 +4,13 @@ var data = null;
 var adjectives = [];
 var genres = [];
 var ends = [];
+var p;
 function doData(json) {
     data = json.feed.entry;
+}
+
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
 }
 
 function readData() {
@@ -35,16 +40,15 @@ function placeRandom(){
   do {
     adj1num = randomFromArray(adjectives);
   } while(adj1num === adj2num);
-  var adj1 = adjectives[adj1num];
+  var adj1 = adjectives[adj1num].capitalize();
   var adj2 = adjectives[adj2num];
   var genre = genres[randomFromArray(genres)];
   var end = ends[randomFromArray(ends)];
-  var result = adj1 + " and " + adj2 + " " + genre + " " + end;
-  var p = document.getElementById("result")
+  var result = adj1 + " & " + adj2 + " " + genre + " " + end;
   p.innerHTML = result;
 }
 $(document).ready(function(){
+    p = document.getElementById("result");
     readData();
     placeRandom();
-
 });
