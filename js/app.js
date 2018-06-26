@@ -76,15 +76,22 @@ function placeRandom(){
   countrycode.innerHTML = countries[randomFromArray(countries)];
   type.innerHTML = types[randomFromArray(types)];
 
+  // Tweet:
+  var url = 'http://janospauer.com/genrerator/'
+  var message = '%E2%80%9C' + result + '%E2%80%9D %0A%E2%80%94 @JanosPauer %0A' + url;
+  var tweet = 'http://twitter.com/home?status=' + message.replace(/ /g, "%20").replace("&", "and");
+
   // QR code:
   while (code.firstChild) {
     code.removeChild(code.firstChild);
   }
   new QRCode(code, {
-  	text: "http://jindo.dev.naver.com/collie",
+  	text: tweet,
   	width: 160,
   	height: 160,
+    correctLevel : QRCode.CorrectLevel.L
   });
+  console.log(tweet);
 }
 
 $(document).ready(function(){
