@@ -1,9 +1,16 @@
 @font-face {
     font-family: 'Texta';
     src: local('Texta Heavy'), local('Texta-Heavy'), url('../fonts/texta_heavy/Texta-Heavy-webfont.ttf');
-    font-style: 'Heavy'
+    font-weight: 700
+}
+@font-face {
+    font-family: 'Texta';
+    src: local('Texta Medium'), local('Texta-Medium'), url('../fonts/texta_medium/Texta-Medium-webfont.ttf');
+    font-weight: 300
 }
 
 body {
-  font-family: 'Texta'
+  font-family: 'Texta';
+  font-weight: 300;
+  font-size: 18px;
 }
