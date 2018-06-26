@@ -26,16 +26,19 @@ function readData() {
         }
     }
 }
+function randomFromArray (a) {
+  return Math.floor(Math.random() * a.length-1)+1;
+}
 function placeRandom(){
-  var adj1num = Math.floor(Math.random() * adjectives.length);
-  var adj2num = Math.floor(Math.random() * adjectives.length);
+  var adj1num = randomFromArray(adjectives);
+  var adj2num = randomFromArray(adjectives);
   do {
-    adj1num = Math.floor(Math.random() * adjectives.length);
+    adj1num = randomFromArray(adjectives);
   } while(adj1num === adj2num);
   var adj1 = adjectives[adj1num];
   var adj2 = adjectives[adj2num];
-  var genre = genres[Math.floor(Math.random() * genres.length)]
-  var end = ends[Math.floor(Math.random() * ends.length)]
+  var genre = genres[randomFromArray(genres)];
+  var end = ends[randomFromArray(ends)];
   var result = adj1 + " and " + adj2 + " " + genre + " " + end;
   var p = document.getElementById("result")
   p.innerHTML = result;
