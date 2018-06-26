@@ -56,6 +56,7 @@ function placeRandom(){
   } while(adj1num === adj2num);
   var adj1 = adjectives[adj1num].capitalize();
   var adj2 = adjectives[adj2num];
+  adj2 = adj2.charAt(0).toLowerCase() + adj2.slice(1);
   var genre = genres[randomFromArray(genres)];
   var end = ends[randomFromArray(ends)];
   var result = adj1 + " & " + adj2 + " " + genre + " " + end;

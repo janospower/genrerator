@@ -62,8 +62,13 @@ p {
     color: white;
     background: rgba(0,0,0,0.99);
 }
+#toprow {
+  display: grid;
+  grid-template-columns: 160px 160px 160px 160px;
+  margin: 0px;
+}
 #toprow span {
-  margin-left: 80px;
+  /* margin-left: 80px; */
 }
 #countrycode {
   text-transform: uppercase;
