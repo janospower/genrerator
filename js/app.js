@@ -8,7 +8,7 @@ function doData(json) {
     data = json.feed.entry;
 }
 
-function readData(parent) {
+function readData() {
     for(var r=0; r<data.length; r++) {
         var cell = data[r]["gs$cell"];
         var val = cell["$t"];
@@ -36,10 +36,12 @@ function placeRandom(){
   var adj2 = adjectives[adj2num];
   var genre = genres[Math.floor(Math.random() * genres.length)]
   var end = ends[Math.floor(Math.random() * ends.length)]
-  alert(adj1 + " and " + adj2 + " " + genre + " " + end)
+  var result = adj1 + " and " + adj2 + " " + genre + " " + end;
+  var p = document.getElementById("result")
+  p.innerHTML = result;
 }
 $(document).ready(function(){
-    readData($("#data"));
+    readData();
     placeRandom();
 
 });

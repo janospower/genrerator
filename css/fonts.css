@@ -1,5 +1,9 @@
 @font-face {
-    font-family: 'Apax';
-    src: local('Apax Light'), local('Apax-Light'), url('../fonts/Apax-Light.ttf');
-    font-weight: 300
+    font-family: 'Texta';
+    src: local('Texta Black'), local('Texta-Black'), url('../fonts/texta_black/Texta-Black-webfont.ttf');
+    font-weight: 900
+}
+
+body {
+  font-family: 'Texta'
 }

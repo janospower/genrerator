@@ -1,0 +1,8 @@
+#result{
+  font-size: 100px;
+  font-weight: 900;
+  text-transform: lowercase;
+}
+#result:first-letter{
+  text-transform: capitalize;
+}
