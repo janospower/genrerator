@@ -79,7 +79,9 @@ function placeRandom(){
   // Tweet:
   var url = 'http://janospauer.com/genrerator/'
   var message = '%E2%80%9C' + result + '%E2%80%9D %0A%E2%80%94 @JanosPauer %0A' + url;
-  var tweet = 'http://twitter.com/home?status=' + message.replace(/ /g, "%20").replace("&", "and");
+  var t = 'http://twitter.com/intent/tweet?text=';
+  // 'http://twitter.com/home?status='
+  var tweet = t + message.replace(/ /g, "%20").replace("&", "and");
 
   // QR code:
   while (code.firstChild) {
