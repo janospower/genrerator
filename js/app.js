@@ -1,49 +1,45 @@
 // from https://gist.github.com/terrywbrady/a03b25fe42959b304b1e:
 
-var spData = null;
+var data = null;
+var adjectives = [];
+var genres = [];
+var ends = [];
 function doData(json) {
-    spData = json.feed.entry;
-}
-
-function drawCell(tr, val) {
-    var td = $("<td/>");
-    tr.append(td);
-    td.append(val);
-    return td;
-}
-function drawRow(table, rowData) {
-  if (rowData == null) return null;
-  if (rowData.length == 0) return null;
-  var tr = $("<tr/>");
-  table.append(tr);
-  for(var c=0; c<rowData.length; c++) {
-    drawCell(tr, rowData[c]);
-  }
-  return tr;
-}
-
-function drawTable(parent) {
-  var table = $("<table/>");
-  parent.append(table);
-  return table;
+    data = json.feed.entry;
 }
 
 function readData(parent) {
-    var data = spData;
-    var table = drawTable(parent);
-    var rowData = [];
-
     for(var r=0; r<data.length; r++) {
         var cell = data[r]["gs$cell"];
         var val = cell["$t"];
-        if (cell.col == 1) {
-            drawRow(table, rowData);
-            rowData = [];
+        var col = parseInt(cell.col);
+        switch (col) {
+          case 1:
+            adjectives.push(val);
+            break;
+          case 2:
+            genres.push(val);
+            break;
+          case 3:
+            ends.push(val);
+            break;
         }
-        rowData.push(val);
     }
-    drawRow(table, rowData);
+}
+function placeRandom(){
+  var adj1num = Math.floor(Math.random() * adjectives.length);
+  var adj2num = Math.floor(Math.random() * adjectives.length);
+  do {
+    adj1num = Math.floor(Math.random() * adjectives.length);
+  } while(adj1num === adj2num);
+  var adj1 = adjectives[adj1num];
+  var adj2 = adjectives[adj2num];
+  var genre = genres[Math.floor(Math.random() * genres.length)]
+  var end = ends[Math.floor(Math.random() * ends.length)]
+  alert(adj1 + " and " + adj2 + " " + genre + " " + end)
 }
 $(document).ready(function(){
     readData($("#data"));
+    placeRandom();
+
 });
