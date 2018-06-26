@@ -85,7 +85,7 @@ function placeRandom(){
   var tweet = t + message.replace(/ /g, "%20").replace("&", "and");
 
   // Link:
-  twitterlink.href=tweet;
+  twitterlink.href="http://twitter.com/";
 
   // QR code:
   while (code.firstChild) {
