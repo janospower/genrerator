@@ -103,6 +103,10 @@ function placeRandom(){
 function toggler(onoff) {
     var element = document.getElementById("highlightMenu");
     if (onoff == 'on') {
+      var resY = resultDiv.getBoundingClientRect().top;
+      element.style.top = (resY-50)+'px';
+      console.log(element.getBoundingClientRect().top);
+      console.log(resY);
       element.classList.add("highlightMenuActive");
       document.execCommand('copy');
     }

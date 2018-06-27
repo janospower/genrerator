@@ -69,7 +69,7 @@ p {
 }
 #toprow {
   display: grid;
-  grid-template-columns: 160px 160px 160px 160px;
+  grid-template-columns: repeat(4, minmax(min-content, 160px));
   margin: 0px;
 }
 #toprow span {
@@ -123,13 +123,16 @@ textarea {
   -webkit-transition: all 75ms ease-out,left 75ms ease-out;
   transition: all 75ms ease-out,left 75ms ease-out;
   transform: translateY(0px);
-  left: calc(50% - 80px);
+  /* left margin + left padding + half of (width - 2*padding - qr) - half of tooltipwidth */
+  left: calc(10vw + 80px + (80vw - 320px)/2 - 200px);
   top: 410px;
+  visibility: hidden;
 }
 
 .highlightMenuActive {
   opacity: 1;
   transform: translateY(-10px);
+  visibility: visible;
 }
 .highlightMenu-inner {
   position: relative;
