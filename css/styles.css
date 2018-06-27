@@ -122,14 +122,14 @@ textarea {
   opacity: 0;
   -webkit-transition: all 75ms ease-out,left 75ms ease-out;
   transition: all 75ms ease-out,left 75ms ease-out;
-  -webkit-animation: pop-upwards 180ms forwards linear;
-  animation: pop-upwards 180ms forwards linear;
-  left: 687px;
-  top: 368px;
+  transform: translateY(10px);
+  left: calc(50% - 80px);
+  top: 410px;
 }
 
 .highlightMenuActive {
   opacity: 1;
+  transform: translateY(0px);
 }
 .highlightMenu-inner {
   position: relative;
