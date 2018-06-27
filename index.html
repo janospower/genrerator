@@ -51,7 +51,9 @@
           </p>
           <p id="notes">Notes:</p>
           <p>
-            <div id="result" onclick="toggler();">Result goes here</div>
+            <textarea readonly="true" id="result" onclick="toggler('on');" onblur="toggler('off');" >
+              Result goes here
+            </textarea>
           </p>
         </div>
         <div id="qrcode"></div>

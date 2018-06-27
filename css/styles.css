@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   background-color: rgb(241,240,236);
   overflow: hidden;
@@ -80,6 +83,7 @@ p {
 }
 #result{
   cursor: context-menu;
+  width: 100%;
   padding-right: 40px;
   font-size: 2.5vw;
   font-weight: 700;
@@ -90,8 +94,21 @@ p {
   user-select: all;          /* Likely future */
   /* text-transform: lowercase; */
 }
-#result:first-letter{
-  /* text-transform: capitalize; */
+/* #result:first-letter{
+  text-transform: capitalize;
+} */
+*:focus {
+    outline: 0;
+}
+textarea {
+    border: none;
+    padding: 0px;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    resize: none;
 }
 #qrcode {
   width:160px;

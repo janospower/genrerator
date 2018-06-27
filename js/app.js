@@ -84,9 +84,6 @@ function placeRandom(){
   // 'http://twitter.com/home?status='
   var tweet = t + message.replace(/ /g, "%20").replace("&", "and");
 
-  // Link:
-  twitterlink.href="http://twitter.com/";
-
   // QR code:
   while (code.firstChild) {
     code.removeChild(code.firstChild);
@@ -97,11 +94,22 @@ function placeRandom(){
   	height: 160,
     correctLevel : QRCode.CorrectLevel.L
   });
+
+  // Link:
+  twitterlink.href=tweet;
+
 }
 
-function toggler() {
+function toggler(onoff) {
     var element = document.getElementById("highlightMenu");
-    element.classList.toggle("highlightMenuActive");
+    if (onoff == 'on') {
+      element.classList.add("highlightMenuActive");
+      document.execCommand('copy');
+    }
+    else {
+      element.classList.remove("highlightMenuActive");
+      element.blur();
+    }
 }
 
 $(document).ready(function(){
