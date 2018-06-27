@@ -35,13 +35,15 @@ button {
   -moz-osx-font-smoothing: inherit;
   /* Corrects inability to style clickable `input` types in iOS */
   -webkit-appearance: none;
+  -webkit-transition: all 75ms ease-out,left 75ms ease-out;
+  transition: all 75ms ease-out,left 75ms ease-out;
 }
 button:hover {
-  transform: translateY(5px);
+  transform: translateY(3px);
 }
 
 button:active {
-  transform: translateY(10px);
+  transform: translateY(6px);
 }
 /* Remove excess padding and border in Firefox 4+ */
 &::-moz-focus-inner {
