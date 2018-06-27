@@ -122,18 +122,19 @@ textarea {
   opacity: 0;
   -webkit-transition: all 75ms ease-out,left 75ms ease-out;
   transition: all 75ms ease-out,left 75ms ease-out;
-  transform: translateY(10px);
+  transform: translateY(0px);
   left: calc(50% - 80px);
   top: 410px;
 }
 
 .highlightMenuActive {
   opacity: 1;
-  transform: translateY(0px);
+  transform: translateY(-10px);
 }
 .highlightMenu-inner {
   position: relative;
   background-color: black;
+  color: white;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   padding: 0 10px;
@@ -141,12 +142,19 @@ textarea {
 .svgIcon {
 fill: #fff;
 }
+.svgIcon-use {
+  margin-top: 5px;
+}
 .highlightMenu-arrowClip {
   position: absolute;
   bottom: -10px;
   left: 50%;
   clip: rect(10px 20px 20px 0);
   margin-left: -10px;
+}
+.highlightMenu-inner span, a {
+  vertical-align: middle;
+  display:inline-block
 }
 .highlightMenu-arrow {
 display: block;
