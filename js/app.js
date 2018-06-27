@@ -15,7 +15,8 @@ var resultDiv,
     code,
     rating,
     twitterlink,
-    sleeve;
+    sleeve,
+    sticker;
 
 function doData(json) {
     data = json.feed.entry;
@@ -109,7 +110,10 @@ function placeRandom(){
   twitterlink.href=tweet;
 
   // Color:
-  sleeve.style.backgroundColor = colors[randomFromArray(colors)];
+  sleeve.style.backgroundColor = "hsl(" + colors[randomFromArray(colors)] + ", 89%, 71%)";
+
+  // Sticker:
+  sticker.style.transform = "rotate("+ ((Math.random()-0.5) * 1.5) +"deg) translate(-"+(Math.random() * 20)+"px,-"+(Math.random() * 20)+"px)";
 
   firstCall = false;
 }
@@ -138,6 +142,7 @@ $(document).ready(function(){
     twitterlink = document.getElementById("twitterlink");
     rating = document.getElementById("rating");
     sleeve = document.getElementById("sleeve");
+    sticker = document.getElementById("sticker");
     readData();
     placeRandom();
 });
