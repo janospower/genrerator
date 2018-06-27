@@ -69,9 +69,14 @@ p {
     color: white;
     background: rgba(0,0,0,0.99);
 }
+#sticker {
+  background-color: white;
+  padding: 20px;
+  box-sizing: content-box;
+}
 #toprow {
   display: grid;
-  grid-template-columns: repeat(4, minmax(min-content, 160px));
+  grid-template-columns: repeat(5, minmax(min-content, 160px));
   margin: 0px;
 }
 #toprow span {

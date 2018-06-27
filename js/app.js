@@ -7,11 +7,15 @@ var ends = [];
 var buttons = [];
 var countries = [];
 var types = [];
+var colors = [];
+var firstCall = true;
 var resultDiv,
     button,
     descriptionDiv,
     code,
-    twitterlink;
+    rating,
+    twitterlink,
+    sleeve;
 
 function doData(json) {
     data = json.feed.entry;
@@ -45,6 +49,9 @@ function readData() {
           case 6:
             types.push(val);
             break;
+          case 7:
+            colors.push(val);
+            break;
         }
     }
 }
@@ -65,17 +72,20 @@ function placeRandom(){
   adj2 = adj2.charAt(0).toLowerCase() + adj2.slice(1);
   var genre = genres[randomFromArray(genres)];
   var end = ends[randomFromArray(ends)];
-  var result = adj1 + " & " + adj2 + " " + genre + " " + end;
+  var result = adj1 + ", " + adj2 + ", " + genre + " " + end + ".";
   resultDiv.innerHTML = result;
 
   // Other random elements:
-  button.innerHTML = buttons[randomFromArray(buttons)];
+  if (!firstCall) {
+    button.innerHTML = buttons[randomFromArray(buttons)];
+  }
   var three = Math.floor(Math.random() * 500);
   if (three < 100) {three = '0' + three;}
   else if (three < 10) {three = '00' + three}
   threedigits.innerHTML = three;
   countrycode.innerHTML = countries[randomFromArray(countries)];
   type.innerHTML = types[randomFromArray(types)];
+  rating.innerHTML = Math.floor(Math.random() * 10) + "." + Math.floor(Math.random() * 10);
 
   // Tweet:
   var url = 'http://janospauer.com/genrerator/'
@@ -98,6 +108,10 @@ function placeRandom(){
   // Link:
   twitterlink.href=tweet;
 
+  // Color:
+  sleeve.style.backgroundColor = colors[randomFromArray(colors)];
+
+  firstCall = false;
 }
 
 function toggler(onoff) {
@@ -105,8 +119,6 @@ function toggler(onoff) {
     if (onoff == 'on') {
       var resY = resultDiv.getBoundingClientRect().top;
       element.style.top = (resY-50)+'px';
-      console.log(element.getBoundingClientRect().top);
-      console.log(resY);
       element.classList.add("highlightMenuActive");
       document.execCommand('copy');
     }
@@ -124,6 +136,8 @@ $(document).ready(function(){
     type = document.getElementById("type");
     code = document.getElementById("qrcode");
     twitterlink = document.getElementById("twitterlink");
+    rating = document.getElementById("rating");
+    sleeve = document.getElementById("sleeve");
     readData();
     placeRandom();
 });

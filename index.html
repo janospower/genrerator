@@ -31,30 +31,41 @@
   <body>
     <main>
       <header>
-        <button type="button" id="button" name="button" onclick="placeRandom();">Randomize!</button>
+        <h1>Record Review Randomizer</h1>
+        <h2>Music criticism you can trust!</h2>
+        <!-- <span>
+          <input type="text" name="" value="paste your song's URL here">
+        </span> -->
+        <span><button type="button" id="button" name="button" onclick="placeRandom();">Randomize</button></span>
       </header>
-      <section>
+      <section id="sleeve">
         <div>
-          <p id="toprow">
-            <span>
-              Label
-            </span>
-            <span id="threedigits">
-              000
-            </span>
-            <span id="countrycode">
-              UK
-            </span>
-            <span id="type">
-              12"
-            </span>
-          </p>
-          <p id="notes">Notes:</p>
-          <p>
-            <textarea readonly="true" id="result" onclick="toggler('on');" onblur="toggler('off');" >
-              Result goes here
-            </textarea>
-          </p>
+          <div id="sticker">
+            <p id="toprow">
+              <span>
+                Label
+              </span>
+              <span id="threedigits">
+                000
+              </span>
+              <span id="countrycode">
+                UK
+              </span>
+              <span id="type">
+                12"
+              </span>
+            </p>
+            <p id="notes">Notes:</p>
+            <p>
+              <textarea readonly="true" id="result" onclick="toggler('on');" onblur="toggler('off');" >
+                Result goes here
+              </textarea>
+            </p>
+          </div>
+          <p id="notes">Rating:</p>
+          <h1 id="rating">
+            10.0
+          </h1>
         </div>
         <div id="qrcode"></div>
       </section>
